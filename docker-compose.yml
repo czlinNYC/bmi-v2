@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports: 
+     - 3000:3000
+  # db:
+  #   container_name: postgres_local
+  #   image: postgres
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: root
+  #     POSTGRES_PASSWORD: root
+  #     POSTGRES_DB: blue_max_local
+  #   ports: 
+  #    - 5432:5432
