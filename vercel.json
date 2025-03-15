@@ -4,10 +4,8 @@
 		"enabled": false
 	},
 	"builds": [
-		{ "src": "/src/main.ts", "use": "@vercel/node" },
-		{ "src": "/client/dist/*", "use": "@now/static" }
+		{ "src": "/client/dist/*", "use": "@now/static" },
+		{ "src": "/src/main.js", "use": "@vercel/node" }
 	],
-	"routes": [
-		{ "src": "/(.*)", "dest": "/dist/src/main.ts", "methods": ["GET"] }
-	]
+	"routes": [{ "src": "/(.*)", "dest": "/src/main.js", "methods": ["GET"] }]
 }
