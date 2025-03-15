@@ -15,26 +15,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TeamsController = void 0;
 const common_1 = require("@nestjs/common");
 const teams_service_1 = require("./teams.service");
-const create_team_dto_1 = require("./dto/create-team.dto");
-const update_team_dto_1 = require("./dto/update-team.dto");
 let TeamsController = class TeamsController {
-    constructor(teamsService) {
-        this.teamsService = teamsService;
+    constructor(TeamsService) {
+        this.TeamsService = TeamsService;
     }
-    create(createTeamDto) {
-        return this.teamsService.create(createTeamDto);
+    create(team) {
+        return this.TeamsService.create(team);
     }
     findAll() {
-        return this.teamsService.findAll();
+        return this.TeamsService.findAll();
     }
     findOne(id) {
-        return this.teamsService.findOne(+id);
+        return this.TeamsService.findOne(+id);
     }
-    update(id, updateTeamDto) {
-        return this.teamsService.update(+id, updateTeamDto);
+    update(id, team) {
+        return this.TeamsService.update(+id, team);
     }
     remove(id) {
-        return this.teamsService.remove(+id);
+        return this.TeamsService.remove(+id);
     }
 };
 exports.TeamsController = TeamsController;
@@ -42,7 +40,7 @@ __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_team_dto_1.CreateTeamDto]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], TeamsController.prototype, "create", null);
 __decorate([
@@ -63,7 +61,7 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, update_team_dto_1.UpdateTeamDto]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], TeamsController.prototype, "update", null);
 __decorate([
@@ -74,7 +72,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeamsController.prototype, "remove", null);
 exports.TeamsController = TeamsController = __decorate([
-    (0, common_1.Controller)('teams'),
+    (0, common_1.Controller)('api/teams'),
     __metadata("design:paramtypes", [teams_service_1.TeamsService])
 ], TeamsController);
 //# sourceMappingURL=teams.controller.js.map

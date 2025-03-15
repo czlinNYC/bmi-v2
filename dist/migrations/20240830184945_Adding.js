@@ -33,6 +33,7 @@ async function up(knex) {
             .createTable('teams', (table) => {
             table.increments('id').primary();
             table.string('team_name').notNullable();
+            table.string('org_name').notNullable();
             table
                 .bigint('org_id')
                 .unsigned()

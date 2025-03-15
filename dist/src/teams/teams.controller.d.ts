@@ -1,12 +1,26 @@
 import { TeamsService } from './teams.service';
-import { CreateTeamDto } from './dto/create-team.dto';
-import { UpdateTeamDto } from './dto/update-team.dto';
 export declare class TeamsController {
-    private readonly teamsService;
-    constructor(teamsService: TeamsService);
-    create(createTeamDto: CreateTeamDto): string;
-    findAll(): string;
-    findOne(id: string): string;
-    update(id: string, updateTeamDto: UpdateTeamDto): string;
-    remove(id: string): string;
+    private readonly TeamsService;
+    constructor(TeamsService: TeamsService);
+    create(team: {
+        teamname: string;
+        email: string;
+        name: string;
+        password: string;
+        phone: string;
+        company: string;
+        status: string;
+    }): Promise<any>;
+    findAll(): Promise<any>;
+    findOne(id: string): Promise<any>;
+    update(id: string, team: {
+        teamname: string;
+        email: string;
+        name: string;
+        password: string;
+        phone: string;
+        company: string;
+        status: string;
+    }): Promise<any>;
+    remove(id: string): Promise<any>;
 }

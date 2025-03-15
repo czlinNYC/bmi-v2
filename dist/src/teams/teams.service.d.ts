@@ -1,9 +1,26 @@
-import { CreateTeamDto } from './dto/create-team.dto';
-import { UpdateTeamDto } from './dto/update-team.dto';
+import { Knex } from 'knex';
 export declare class TeamsService {
-    create(createTeamDto: CreateTeamDto): string;
-    findAll(): string;
-    findOne(id: number): string;
-    update(id: number, updateTeamDto: UpdateTeamDto): string;
-    remove(id: number): string;
+    private readonly knex;
+    constructor(knex: Knex);
+    create(team: {
+        teamname: string;
+        email: string;
+        name: string;
+        password: string;
+        phone: string;
+        company: string;
+        status: string;
+    }): Promise<any>;
+    findAll(): Promise<any>;
+    findOne(id: number): Promise<any>;
+    update(id: number, team: {
+        teamname: string;
+        email: string;
+        name: string;
+        password: string;
+        phone: string;
+        company: string;
+        status: string;
+    }): Promise<any>;
+    remove(id: number): Promise<any>;
 }

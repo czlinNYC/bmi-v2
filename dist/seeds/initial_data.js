@@ -148,6 +148,13 @@ async function seed(knex) {
             status: 'ACTIVE'
         }
     ]);
+    await knex('teams').insert([
+        {
+            team_name: 'Wood Chippers',
+            org_name: 'Blue Max Icon',
+            org_id: 1
+        }
+    ]);
     await knex('batches').insert([
         {
             org_id: 1,
